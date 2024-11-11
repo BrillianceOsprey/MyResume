@@ -31,6 +31,62 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    /* Toast Notification Styles */
+    .toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      right: 20px;
+      bottom: 20px;
+      font-size: 17px;
+    }
+
+    .toast.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    /* Modal Dialog Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -534,16 +590,13 @@
 
       </div>
     </section><!-- End Portfolio Section -->
-    <!-- ======= Contact Section ======= -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Contact</h2>
         </div>
-
         <div class="row mt-1">
-
           <div class="col-lg-4">
             <div class="info">
               <div class="address">
@@ -551,13 +604,11 @@
                 <h4>Location:</h4>
                 <p>Yangon, ShwePyiThar</p>
               </div>
-
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
                 <p>myatsoe.dev@gmail.com</p>
               </div>
-
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
@@ -565,10 +616,9 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-8 mt-5 mt-lg-0">
             <!-- Updated form action to use Formspree endpoint -->
-            <form action="https://formspree.io/f/xvgorknv" method="POST" class="php-email-form">
+            <form id="contactForm" action="https://formspree.io/f/xvgorknv" method="POST" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -583,90 +633,19 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+              <div class="text-center">
+                <button type="submit">Send Message</button>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
+            <!-- Toast Notification -->
+            <div id="toast" class="toast">Your message has been sent. Thank you!</div>
           </div>
-
         </div>
-
       </div>
-    </section><!-- End Contact Section -->
-
+    </section>
     <!-- ======= Testimonials Section ======= -->
-    // TODO: testimonial list
+
     <!-- End Testimonials Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-
-        <div class="row mt-1">
-
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <!-- <p>A108 Adam Street, New York, NY 535022</p> -->
-                <p>Yangon,ShwePyiThar</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>myatsoe.dev@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+95 9425602761</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
@@ -714,6 +693,49 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // JavaScript for Toast Notification on Form Submit
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Submit form using AJAX
+      fetch(event.target.action, {
+        method: event.target.method,
+        body: new FormData(event.target),
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          // Show toast or modal depending on the preference
+          var toast = document.getElementById("toast");
+          var modal = document.getElementById("modal");
+
+          if (toast) { // If using toast notification
+            toast.className = "toast show";
+            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+          } else if (modal) { // If using modal dialog
+            modal.style.display = "block";
+          }
+
+          // Clear form fields
+          event.target.reset();
+        } else {
+          alert("There was an error sending your message. Please try again.");
+        }
+      }).catch(error => {
+        alert("There was an error sending your message. Please try again.");
+      });
+
+      // Close modal when the "X" button is clicked
+      var closeModal = document.querySelector(".close");
+      if (closeModal) {
+        closeModal.onclick = function () {
+          document.getElementById("modal").style.display = "none";
+        };
+      }
+    });
+  </script>
 
 </body>
 
