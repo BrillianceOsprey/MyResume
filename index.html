@@ -2,742 +2,950 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>MyatSoe- Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Myat Soe | Mobile Developer Portfolio</title>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Code:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
   <style>
-    /* Toast Notification Styles */
-    .toast {
-      visibility: hidden;
-      min-width: 250px;
-      background-color: #4CAF50;
+    :root {
+      --bg: #181829;
+      --card: #232347;
+      --accent: #6c63ff;
+      --accent2: #23c9ff;
+      --text: #fafbfc;
+      --muted: #a1a1c7;
+      --border: #363667;
+      --shadow: 0 4px 32px rgba(60, 60, 120, .12);
+      --radius: 18px;
+    }
+
+    html,
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Fira Code', 'Poppins', 'Open Sans', monospace, sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    a:hover {
+      color: var(--accent2);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 600;
+      margin-top: 0;
+    }
+
+    .container {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 28px 16px;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 0;
+      background: rgba(24, 24, 41, 0.97);
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      box-shadow: 0 2px 16px 0 rgba(40, 40, 80, 0.14);
+    }
+
+    .nav-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-main .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: .05em;
+      color: var(--accent);
+    }
+
+    .nav-main nav {
+      display: flex;
+      gap: 22px;
+    }
+
+    .nav-main nav a {
+      color: var(--text);
+      font-size: 1rem;
+      padding: 7px 13px;
+      border-radius: 8px;
+      transition: background .2s;
+    }
+
+    .nav-main nav a.active,
+    .nav-main nav a:hover {
+      background: var(--accent);
       color: #fff;
+    }
+
+    .hero {
       text-align: center;
-      border-radius: 5px;
-      padding: 16px;
+      margin: 42px 0 50px;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .hero .subtitle {
+      font-size: 1.19rem;
+      color: var(--muted);
+    }
+
+    .hero .roles span {
+      color: var(--accent2);
+      font-weight: 600;
+      font-size: 1.1em;
+      margin-left: 6px;
+    }
+
+    .hero .social {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .hero .social a {
+      font-size: 1.5rem;
+      color: var(--muted);
+      background: #232347a9;
+      border-radius: 100%;
+      padding: 8px;
+      transition: background .18s, color .18s;
+    }
+
+    .hero .social a:hover {
+      color: var(--accent2);
+      background: var(--card);
+    }
+
+    .btn-accent {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      margin: 22px 0 0;
+      cursor: pointer;
+      font-weight: 600;
+      transition: box-shadow .2s;
+      box-shadow: 0 2px 16px rgba(70, 110, 255, .14);
+    }
+
+    .btn-accent:hover {
+      box-shadow: 0 6px 32px rgba(70, 200, 255, .12);
+    }
+
+    .section {
+      margin-bottom: 48px;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all .65s cubic-bezier(.32, 1.2, .32, 1);
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      color: var(--accent2);
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, rgba(36, 36, 60, .97) 80%, rgba(60, 60, 110, .97) 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .about-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 0 6px #232347;
+      background: #222;
+    }
+
+    .about-details {
+      max-width: 580px;
+      margin: auto;
+    }
+
+    .about-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+    }
+
+    .about-list li {
+      color: var(--muted);
+    }
+
+    .about-list strong {
+      color: var(--accent);
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skill {
+      flex: 1 1 120px;
+      background: #232347c2;
+      color: var(--text);
+      border-radius: 13px;
+      margin: 8px 0;
+      padding: 18px 20px;
+      box-shadow: 0 2px 12px rgba(50, 50, 120, .05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.05rem;
+    }
+
+    .skill-bar-bg {
+      background: #1e1e33;
+      border-radius: 6px;
+      width: 52%;
+      height: 9px;
+      overflow: hidden;
+      margin-left: 15px;
+      margin-right: 0;
+    }
+
+    .skill-bar {
+      height: 100%;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      width: 0%;
+      transition: width 1.4s cubic-bezier(.5, .2, .2, 1);
+    }
+
+    .resume-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .resume-section {
+      flex: 1 1 320px;
+      min-width: 290px;
+      background: #232347c0;
+      border-radius: 13px;
+      padding: 18px 24px;
+      margin-bottom: 16px;
+    }
+
+    .resume-title {
+      font-size: 1.17rem;
+      color: var(--accent);
+    }
+
+    .resume-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .resume-list li {
+      margin-bottom: 10px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .portfolio-card {
+      background: #232347f7;
+      border-radius: 15px;
+      box-shadow: 0 2px 14px rgba(40, 40, 90, .12);
+      overflow: hidden;
+      transition: transform .16s;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 32px rgba(70, 110, 255, .14);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 165px;
+      object-fit: cover;
+      background: #191926;
+      display: block;
+    }
+
+    .portfolio-card .p-content {
+      padding: 14px;
+    }
+
+    .portfolio-card h4 {
+      font-size: 1.09rem;
+      color: var(--accent);
+      margin: 0 0 7px;
+    }
+
+    .portfolio-card .p-links {
+      margin-top: 5px;
+      display: flex;
+      gap: 7px;
+    }
+
+    .portfolio-card .p-links a {
+      color: var(--accent2);
+      font-size: 1.1rem;
+      border-radius: 4px;
+      background: #191940;
+      padding: 4px 9px;
+      transition: background .2s;
+    }
+
+    .portfolio-card .p-links a:hover {
+      background: var(--accent);
+    }
+
+    .contact-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+
+    .contact-info,
+    .contact-form {
+      flex: 1 1 320px;
+      background: #232347c2;
+      border-radius: 14px;
+      padding: 22px 22px 16px 22px;
+      margin-bottom: 14px;
+    }
+
+    .contact-info h4,
+    .contact-info p {
+      margin: 0 0 6px 0;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 11px 13px;
+      background: #181829;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border .2s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border: 1.5px solid var(--accent2);
+      outline: none;
+    }
+
+    .contact-form button {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 0;
+      font-size: 1.08rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: box-shadow .2s;
+    }
+
+    .contact-form button:disabled {
+      background: #33355a;
+      color: #888;
+      cursor: not-allowed;
+    }
+
+    .toast {
       position: fixed;
-      z-index: 1;
-      right: 20px;
-      bottom: 20px;
-      font-size: 17px;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #fff;
+      padding: 18px 28px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(60, 60, 120, .11);
+      font-size: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 2002;
+      transition: opacity .35s;
     }
 
     .toast.show {
-      visibility: visible;
-      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      opacity: 1;
+      pointer-events: auto;
     }
 
-    /* Modal Dialog Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      padding-top: 100px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 500px;
+    footer {
+      padding: 40px 0 22px;
       text-align: center;
+      color: var(--muted);
+      background: rgba(36, 36, 60, 1);
     }
 
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
+    footer .footer-social {
+      margin: 16px 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    footer .footer-social a {
+      color: var(--accent2);
+      font-size: 1.4rem;
+      background: #222348;
+      padding: 7px 10px;
+      border-radius: 100%;
+      transition: background .2s, color .2s;
+    }
+
+    footer .footer-social a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    @media (max-width: 700px) {
+
+      .resume-wrap,
+      .skills-wrap,
+      .contact-wrap {
+        flex-direction: column;
+      }
+
+      .container {
+        padding: 18px 3vw;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero h1 {
+        font-size: 1.2rem;
+      }
+
+      .about-img {
+        width: 82px;
+        height: 82px;
+      }
+
+      .card,
+      .resume-section,
+      .contact-info,
+      .contact-form {
+        padding: 13px;
+      }
     }
   </style>
-
-  <!-- =======================================================
-  * Template Name: MyResume
-  * Updated: Jun 13 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
-
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a>
-        </li>
-        <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-        <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-      </ul>
-    </nav><!-- .nav-menu -->
-
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Myat Soe</h1>
-      <p>I'm <span class="typed" data-typed-items="Developer, Freelancer"></span></p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100026042555239" class="facebook"><i
-            class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="https://www.linkedin.com/in/myat-soe-12b8ba263/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
+  <!-- HEADER & NAV -->
+  <header>
+    <div class="container nav-main">
+      <div class="logo">Myat Soe</div>
+      <nav>
+        <a href="#hero" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#resume">Experience</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </section><!-- End Hero -->
+  </header>
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>To showcase my expertise in developing high-quality, reliable, and efficient
-            mobile applications using various programming languages and tools, while
-            highlighting my ability to create user-friendly interfaces and solve complex
-            technical challenges. I aim to demonstrate my versatility by showcasing a range of
-            apps across different categories, such as gaming, social media, e-commerce, and
-            productivity, and to emphasize my skills in problem-solving, teamwork, and
-            innovation.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>UI/UX Designer &amp; Mobile Developer.</h3>
-            <p class="fst-italic">
-              As a passionate mobile developer, I specialize in creating intuitive and engaging applications for both
-              iOS and Android platforms. With 2 years of experience in the industry, I have developed a strong
-              foundation in mobile app development and design principles, enabling me to build high-quality,
-              user-friendly applications that meet clients' needs and exceed their expectations.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>6 Nov 1999</span></li> -->
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                    <span><a
-                        href="https://www.linkedin.com/in/myat-soe-12b8ba263/">https://www.linkedin.com/in/myat-soe-12b8ba263/</a></span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+95 9425602761</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Yangon</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>24</span></li> -->
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B.C.Sc(UCSY) , Bsc(IT)
-                      (EIU,Paris)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>myatsoe.dev@gmail.com</span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              I am always eager to take on new projects and challenges, leveraging my skills and creativity to deliver
-              top-notch mobile applications that drive value and make a positive impact on users' lives.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>If you're looking for a mobile developer who is passionate, dedicated, and capable of turning your ideas
-            into reality, I would love to discuss your project further. Let's connect and create something amazing
-            together!.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Happy Clients</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Awards</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>I am a skilled mobile developer with expertise in crafting high-quality applications for iOS and Android
-            platforms. Proficient in languages like Java,Flutter & Dart and Kotlin, I excel in creating seamless user
-            experiences, implementing effective UI/UX designs, and optimizing app performance. My strong grasp of app
-            architecture and integration with backend services enables me to develop robust and feature-rich mobile
-            applications that meet user needs and industry standards.</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">Dart <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Node.js <i class="val">50%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">C# <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Java <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Adobe XD <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>Experienced mobile developer with a proven track record of creating polished and user-centric applications
-            for iOS and Android platforms. Proficient in Dart, Kotlin, and Java, with a strong emphasis on clean code,
-            UI/UX design, and performance optimization. Skilled in collaborating with cross-functional teams to deliver
-            high-quality apps. Adaptable and eager to embrace new technologies to drive innovation in mobile
-            development.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Myat Soe</h4>
-              <p><em>Innovative and deadline-driven Mobile developer with 4+ years of experience designing and
-                  developing user-centered app material from initial concept to final, polished deliverable.</em></p>
-              <ul>
-                <li>Yangon,Hlaing</li>
-                <li>09425602761</li>
-                <li>myatsoe.dev@example.com</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bsc.(IT) &amp; Software Development</h4>
-              <h5>2023 - Now</h5>
-              <p><em> <a href="https://eiu.ac/"> European International University,Paris</a></em></p>
-              <p>MIS(Management Information System), Database, Networking, Web-Programming, AWS,
-                Window-Server-Administration, Project Management</p>
-            </div>
-            <div class="resume-item">
-              <h4>Bachelor of Computer Science (B.C.Sc)</h4>
-              <h5>2016 - 2021</h5>
-              <p><em><a href="https://www.ucsy.edu.mm/">University of computer studies, Yangon</a></em></p>
-              <p>Software Engineering (SE), Object Oriented Programming (OOP), Computer Fundamental, Database Management
-                Systems (DBMS), Algorithms, HTML, C#, C, C++, Java</p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Mobile developer</h4>
-              <h5>2022 - Now</h5>
-              <p><em>Yangon , Hlaing</em></p>
-              <ul>
-                <li>Contribute to the design, development, and implementation of mobile, layout, and production
-                  communication materials.</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the
-                  project. </li>
-                <li>Ensure the quality and accuracy of the design by overseeing the assessment of all development.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Mobile developer as Freelancer</h4>
-              <h5>2020 - Now</h5>
-              <p><em>Asia</em></p>
-              <ul>
-                <li>Developed numerous software programs (application, backend api,cloud computing(Azure(AWS)), project
-                  management).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate mobile design</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p> I have successfully developed and designed a range of applications for both iOS and Android platforms.
-            Each project showcases my proficiency in utilizing various technologies and frameworks to create intuitive
-            and feature-rich mobile applications. These apps cater to diverse purposes, delivering exceptional user
-            experiences and seamless functionality. From optimizing performance to implementing engaging features, my
-            portfolio represents a versatile skill set in the realm of mobile app development.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <!-- <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li> -->
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/smartduty.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SmartDuty</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <!-- <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a> -->
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                  <a href="https://play.google.com/store/apps/details?id=com.systematic.smart_duty&hl=en&gl=US"><i
-                      class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/gng.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>G&G</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <!-- <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a> -->
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                  <a href="https://play.google.com/store/apps/details?id=com.systematic.gng_live&hl=en&gl=US"><i
-                      class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/moe.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>MOE ERP</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <!-- <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a> -->
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets\img\portfolio\satecha.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SateChat</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <!-- <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a> -->
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                  <a href="https://play.google.com/store/apps/details?id=com.systematic.cpi"><i
-                      class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets\img\portfolio\mini_app.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Mini Erp</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <!-- <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                  <a href="https://play.google.com/store/apps/details?id=com.systematic.mini_erp&hl=en&gl=US"><i
-                      class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/jobclick.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>JobClick</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <!-- <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a> -->
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                  <a href="https://play.google.com/store/apps/details?id=com.systematic.clickjob&hl=en&gl=US"><i
-                      class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/ecommerce.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>E-commerce</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <!-- <a href="assets/img/portfolio/ecommerce.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="E-commerce"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                  <a
-                    href="https://install.appcenter.ms/users/myatsoe.dev-gmail.com/apps/e-commerce-public/distribution_groups/public"><i
-                      class="bx bx-link"></i></a>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/maharmoe_white.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Maharmoe Erp</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <!-- <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a> -->
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                  <a href=""></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/market.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Market</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <!-- <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a> -->
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-        <div class="row mt-1">
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Yangon, ShwePyiThar</p>
-              </div>
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>myatsoe.dev@gmail.com</p>
-              </div>
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+95 9425602761</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 mt-5 mt-lg-0">
-            <!-- Updated form action to use Formspree endpoint -->
-            <form id="contactForm" action="https://formspree.io/f/xvgorknv" method="POST" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="text-center">
-                <button type="submit">Send Message</button>
-              </div>
-            </form>
-            <!-- Toast Notification -->
-            <div id="toast" class="toast">Your message has been sent. Thank you!</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ======= Testimonials Section ======= -->
-
-    <!-- End Testimonials Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <!-- HERO -->
+  <section id="hero" class="hero section visible">
     <div class="container">
-      <h3>Myat Soe</h3>
-      <p>Mobile enthusiast and code artist 📱✨ | Crafting seamless experiences on iOS & Android | Passionate about clean
-        code, pixel-perfect designs, and optimizing for performance | Explorer of emerging tech trends 🚀 | Turning
-        ideas into user-centric apps with a touch of innovation.</p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      <img src="assets/img/profile-img.jpg" class="about-img" alt="Profile" />
+      <h1>Myat Soe</h1>
+      <div class="subtitle">Senior Flutter Developer | Cross-platform Mobile Specialist</div>
+      <div class="roles">I'm<span class="type-effect"></span></div>
+      <div class="social">
+        <a href="https://github.com/brillianceosprey" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/myat-soe-12b8ba263/" target="_blank" title="LinkedIn"><i
+            class="bx bxl-linkedin"></i></a>
+        <a href="https://myatsoe.vercel.app/" target="_blank" title="Portfolio"><i class="bx bx-world"></i></a>
       </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>MyatSoe</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: [license-url] -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      <a href="assets/MyatSoe-Resume.pdf" class="btn-accent" download>Download CV (PDF)</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container card about-details">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I’m passionate about building cross-platform mobile apps that truly make a difference. With 4+ years of
+        experience in mobile app development, testing, and deployment, I deliver robust and beautiful solutions on both
+        Android and iOS platforms.
+        <br><br>
+        I thrive in fast-paced teams, love solving hard problems, and never stop learning the latest in tech.
+      </p>
+      <ul class="about-list">
+        <li><strong>Location:</strong> Yangon, Myanmar</li>
+        <li><strong>Email:</strong> <a href="mailto:myatsoe.dev@gmail.com">myatsoe.dev@gmail.com</a></li>
+        <li><strong>Phone:</strong> +95 9425602761</li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/brillianceosprey" target="_blank">brillianceosprey</a>
+        </li>
+        <li><strong>Portfolio:</strong> <a href="https://myatsoe.vercel.app/" target="_blank">myatsoe.vercel.app</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container card">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-wrap">
+        <div class="skill">Flutter / Dart <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="100"></div>
+          </div>
+        </div>
+        <div class="skill">Android (Java/Kotlin) <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="90"></div>
+          </div>
+        </div>
+        <div class="skill">React Native <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="75"></div>
+          </div>
+        </div>
+        <div class="skill">Node.js / Express.js <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="80"></div>
+          </div>
+        </div>
+        <div class="skill">JavaScript / TypeScript <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="85"></div>
+          </div>
+        </div>
+        <div class="skill">HTML5 / CSS3 <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="90"></div>
+          </div>
+        </div>
+        <div class="skill">MongoDB / MySQL <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="70"></div>
+          </div>
+        </div>
+        <div class="skill">Figma / Adobe Creative <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="90"></div>
+          </div>
+        </div>
+        <div class="skill">REST APIs / Firebase <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="85"></div>
+          </div>
+        </div>
+        <div class="skill">Cloud Deploy (Digital Ocean, Cloudflare) <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="80"></div>
+          </div>
+        </div>
+        <div class="skill">Version Control (Git) <div class="skill-bar-bg">
+            <div class="skill-bar" data-skill="95"></div>
+          </div>
+        </div>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </section>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <!-- EXPERIENCE / RESUME -->
+  <section id="resume" class="section">
+    <div class="container card">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="resume-wrap">
+        <div class="resume-section">
+          <div class="resume-title">Senior Flutter Developer</div>
+          <span>Promes (Myanmar/Thailand) | Jan 2024 – Present</span>
+          <ul class="resume-list">
+            <li>Led development of high-performance enterprise & real estate apps for Android/iOS.</li>
+            <li>Migrated legacy apps to Flutter, improving security, speed, and maintainability.</li>
+            <li>Mentored junior devs, implemented DDD/MVC architectures.</li>
+            <li>Established coding standards and project documentation for team efficiency.</li>
+          </ul>
+        </div>
+        <div class="resume-section">
+          <div class="resume-title">Flutter Developer</div>
+          <span>Yangon Yinxiang Yule | Sept 2023 – Nov 2023</span>
+          <ul class="resume-list">
+            <li>Built a complete multi-vendor e-commerce app with vendor, catalog, and order management.</li>
+            <li>Developed adaptive UI and modular reusable widgets for seamless cross-device UX.</li>
+            <li>Delivered high-performance, native-feeling mobile apps for both platforms.</li>
+          </ul>
+        </div>
+        <div class="resume-section">
+          <div class="resume-title">Flutter Developer</div>
+          <span>Systematic Business Solution | Mar 2022 – Oct 2023</span>
+          <ul class="resume-list">
+            <li>Developed new and modernized existing mobile apps for business & ERP clients.</li>
+            <li>Deployed apps to Google Play, Apple App Store, Microsoft App Center, Sunmi Store.</li>
+            <li>Integrated with Sunmi POS devices for enterprise solutions.</li>
+            <li>Managed full app lifecycle: requirements, build, deploy, support.</li>
+          </ul>
+        </div>
+        <div class="resume-section">
+          <div class="resume-title">Freelance Flutter Developer</div>
+          <span>2020 – Present</span>
+          <ul class="resume-list">
+            <li>Delivered 15+ projects across education, social, e-commerce, healthcare, and lifestyle domains.</li>
+            <li>Handled entire project cycle: consult, build, deploy, support.</li>
+            <li>Built social, e-commerce, medical, and dating apps with real-time features and modern UX.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="section-title" style="margin-top: 38px;">Education</h3>
+      <div class="resume-wrap">
+        <div class="resume-section">
+          <div class="resume-title">B.C.Sc, Computer Science</div>
+          <span>University of Computer Studies, Yangon (UCSY)</span>
+        </div>
+        <div class="resume-section">
+          <div class="resume-title">BSc.IT</div>
+          <span>European International University, Paris (EIU)</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- PORTFOLIO / PROJECTS -->
+  <section id="portfolio" class="section">
+    <div class="container card">
+      <h2 class="section-title">Published Applications</h2>
+      <div class="portfolio-grid">
+        <!-- Business & ERP Solutions -->
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/smartduty.png" alt="Smart Duty" />
+          <div class="p-content">
+            <h4>Smart Duty</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.systematic.smart_duty" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Human Resource Management System</span>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/mini_app.png" alt="Mini ERP" />
+          <div class="p-content">
+            <h4>Mini ERP (MIB)</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.systematic.mini_erp" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Enterprise Resource Planning</span>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/meandmoney.png" alt="Me & Money" />
+          <div class="p-content">
+            <h4>Me & Money</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.systematic.me_and_money" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Income & Expense Manager</span>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/moe.jpg" alt="Moe Set Yae" />
+          <div class="p-content">
+            <h4>Moe Set Yae</h4>
+            <div class="p-links">
+              <a href="https://apkpure.com/moe-erp/com.systematic.smartdms" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Comprehensive ERP Solution</span>
+          </div>
+        </div>
+        <!-- Public & Commercial Apps -->
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/jobclick.png" alt="Job Click" />
+          <div class="p-content">
+            <h4>Job Click</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.systematic.clickjob" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Job Search & Recruitment</span>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/kudos.png" alt="Kudos" />
+          <div class="p-content">
+            <h4>Kudos</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.systematic.kudos" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Public Speaking Platform</span>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/gng.jpg" alt="Grab & Go (GNG)" />
+          <div class="p-content">
+            <h4>Grab & Go (GNG)</h4>
+            <div class="p-links">
+              <a href="https://apkpure.com/gng-ops-live/com.systematic.gng_live" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>On-Demand Services</span>
+          </div>
+        </div>
+        <!-- Real Estate & Lifestyle -->
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/nayar.png" alt="Nayar" />
+          <div class="p-content">
+            <h4>Nayar</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.nayyar.estateapp" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Real Estate Platform</span>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/aibaydin.png" alt="AI Baydin" />
+          <div class="p-content">
+            <h4>AI Baydin</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=aibaydin.app" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Pocket Astrologer App</span>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/satecha.png" alt="Sate Cha" />
+          <div class="p-content">
+            <h4>Sate Cha</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.systematic.cpi" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Organizational Management</span>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/bebetter.png" alt="BeBetter" />
+          <div class="p-content">
+            <h4>BeBetter</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.dev.course_app" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Educational/Course Platform</span>
+          </div>
+        </div>
+        <!-- Agriculture & Specialized Apps -->
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/armo.png" alt="Armo" />
+          <div class="p-content">
+            <h4>Armo</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.cluspedia.armo" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Agriculture Platform</span>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/zahira.png" alt="Zahira" />
+          <div class="p-content">
+            <h4>Zahira</h4>
+            <div class="p-links">
+              <a href="https://play.google.com/store/apps/details?id=com.farm.zahira" target="_blank"><i
+                  class="bx bx-link"></i></a>
+            </div>
+            <span>Farm Management App</span>
+          </div>
+        </div>
+        <!-- Custom & Open Source -->
+        <div class="portfolio-card">
+          <img src="assets/img/portfolio/sumeer.png" alt="Sumeer" />
+          <div class="p-content">
+            <h4>Sumeer</h4>
+            <div class="p-links">
+              <a href="https://github.com/mixin27/sumeer" target="_blank"><i class="bx bx-link"></i></a>
+            </div>
+            <span>Resume & CV Builder (Open Source)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container card contact-wrap">
+      <div class="contact-info">
+        <h3>Contact Me</h3>
+        <h4><i class="bi bi-geo-alt"></i> Location:</h4>
+        <p>Yangon, Myanmar</p>
+        <h4><i class="bi bi-envelope"></i> Email:</h4>
+        <p><a href="mailto:myatsoe.dev@gmail.com">myatsoe.dev@gmail.com</a></p>
+        <h4><i class="bi bi-phone"></i> Call:</h4>
+        <p>+95 9425602761</p>
+      </div>
+      <div class="contact-form">
+        <form id="contactForm" action="https://formspree.io/f/xvgorknv" method="POST" autocomplete="off">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea name="message" rows="5" placeholder="Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div id="toast" class="toast">Your message has been sent. Thank you!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <strong>Myat Soe</strong> &copy; 2024 &mdash; Senior Flutter Developer<br />
+      <span>github.com/brillianceosprey | myatsoe.vercel.app</span>
+    </div>
+    <div class="footer-social">
+      <a href="https://github.com/brillianceosprey" target="_blank"><i class="bx bxl-github"></i></a>
+      <a href="https://www.linkedin.com/in/myat-soe-12b8ba263/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://myatsoe.vercel.app/" target="_blank"><i class="bx bx-world"></i></a>
+    </div>
+  </footer>
+
+  <!-- JS -->
   <script>
-    // JavaScript for Toast Notification on Form Submit
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent default form submission
+    // Typewriter effect for hero
+    const roles = ['Senior Flutter Developer', 'Full-Stack Mobile Expert', 'Open Source Contributor'];
+    let t = 0, r = 0;
+    const effect = document.querySelector('.type-effect');
+    function typeRole() {
+      let word = roles[t];
+      effect.textContent = word.slice(0, ++r);
+      if (r === word.length) setTimeout(() => {
+        setTimeout(() => { r = 0; t = (t + 1) % roles.length; typeRole(); }, 1200);
+      }, 400);
+      else setTimeout(typeRole, 85);
+    }
+    if (effect) typeRole();
 
-      // Submit form using AJAX
-      fetch(event.target.action, {
-        method: event.target.method,
-        body: new FormData(event.target),
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          // Show toast or modal depending on the preference
-          var toast = document.getElementById("toast");
-          var modal = document.getElementById("modal");
-
-          if (toast) { // If using toast notification
-            toast.className = "toast show";
-            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
-          } else if (modal) { // If using modal dialog
-            modal.style.display = "block";
-          }
-
-          // Clear form fields
-          event.target.reset();
-        } else {
-          alert("There was an error sending your message. Please try again.");
-        }
-      }).catch(error => {
-        alert("There was an error sending your message. Please try again.");
+    // Section scroll-in animation
+    const sections = document.querySelectorAll('.section');
+    function showSectionsOnScroll() {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 110) sec.classList.add('visible');
       });
+    }
+    window.addEventListener('scroll', showSectionsOnScroll);
+    window.addEventListener('load', showSectionsOnScroll);
 
-      // Close modal when the "X" button is clicked
-      var closeModal = document.querySelector(".close");
-      if (closeModal) {
-        closeModal.onclick = function () {
-          document.getElementById("modal").style.display = "none";
-        };
-      }
+    // Animated skill bars
+    function animateSkills() {
+      document.querySelectorAll('.skill-bar').forEach(bar => {
+        bar.style.width = bar.dataset.skill + '%';
+      });
+    }
+    window.addEventListener('scroll', animateSkills);
+    window.addEventListener('load', animateSkills);
+
+    // Nav active link on scroll
+    const navLinks = document.querySelectorAll('.nav-main nav a');
+    function navActiveLink() {
+      let index = 0, minDist = Infinity;
+      sections.forEach((sec, i) => {
+        const dist = Math.abs(sec.getBoundingClientRect().top - 70);
+        if (dist < minDist) { minDist = dist; index = i; }
+      });
+      navLinks.forEach((l, i) => l.classList.toggle('active', i === index));
+    }
+    window.addEventListener('scroll', navActiveLink);
+
+    // Contact Form AJAX (Formspree)
+    const contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const formData = new FormData(contactForm);
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        showToast("Your message has been sent. Thank you!");
+        contactForm.reset();
+      }).catch(error => {
+        showToast("Oops! Something went wrong.", true);
+      });
     });
+    function showToast(msg, err) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.style.background = err
+        ? "linear-gradient(90deg, #d32f2f, #ef5350)" : "";
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3400);
+    }
   </script>
-
 </body>
 
 </html>
