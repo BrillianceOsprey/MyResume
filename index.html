@@ -497,6 +497,58 @@
         padding: 13px;
       }
     }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .skill-item {
+      background: rgba(35, 35, 71, 0.9);
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 14px rgba(40, 40, 80, 0.15);
+      transition: transform 0.2s;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .skill-item i {
+      font-size: 2rem;
+      color: var(--accent2);
+    }
+
+    .skill-item h4 {
+      margin: 8px 0;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .skill-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .skill-progress {
+      background: #1e1e33;
+      border-radius: 6px;
+      margin-top: 6px;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .skill-progress-bar {
+      height: 100%;
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      width: 0%;
+      transition: width 1.4s ease-in-out;
+    }
   </style>
 </head>
 
@@ -530,9 +582,11 @@
             class="bx bxl-linkedin"></i></a>
         <a href="https://myatsoe.vercel.app/" target="_blank" title="Portfolio"><i class="bx bx-world"></i></a>
       </div>
-      <a href="assets/MyatSoe-Resume.pdf" class="btn-accent" download>Download CV (PDF)</a>
+      <a href="assets/MyatSoe-Resume.pdf" class="btn-accent" download
+        style="margin-top: 16px; display: inline-block;">Download CV (PDF)</a>
     </div>
   </section>
+
 
   <!-- ABOUT -->
   <section id="about" class="section">
@@ -556,59 +610,105 @@
       </ul>
     </div>
   </section>
-
   <!-- SKILLS -->
   <section id="skills" class="section">
     <div class="container card">
       <h2 class="section-title">Technical Skills</h2>
-      <div class="skills-wrap">
-        <div class="skill">Flutter / Dart <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="100"></div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <i class="bx bxl-flutter"></i>
+          <h4>Flutter / Dart</h4>
+          <span>100%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="100"></div>
           </div>
         </div>
-        <div class="skill">Android (Java/Kotlin) <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="90"></div>
+        <div class="skill-item">
+          <i class="bx bxl-android"></i>
+          <h4>Android (Java/Kotlin)</h4>
+          <span>80%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="80"></div>
           </div>
         </div>
-        <div class="skill">React Native <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="75"></div>
+        <div class="skill-item">
+          <i class="bx bxl-react"></i>
+          <h4>React Native</h4>
+          <span>75%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="75"></div>
           </div>
         </div>
-        <div class="skill">Node.js / Express.js <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="80"></div>
+        <div class="skill-item">
+          <i class="bx bxl-nodejs"></i>
+          <h4>Node.js / Express.js</h4>
+          <span>80%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="80"></div>
           </div>
         </div>
-        <div class="skill">JavaScript / TypeScript <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="85"></div>
+        <div class="skill-item">
+          <i class="bx bxl-javascript"></i>
+          <h4>JavaScript / TypeScript</h4>
+          <span>85%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="85"></div>
           </div>
         </div>
-        <div class="skill">HTML5 / CSS3 <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="90"></div>
+        <div class="skill-item">
+          <i class="bx bxl-html5"></i>
+          <h4>HTML5 / CSS3</h4>
+          <span>90%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="90"></div>
           </div>
         </div>
-        <div class="skill">MongoDB / MySQL <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="70"></div>
+        <div class="skill-item">
+          <i class="bx bx-data"></i>
+          <h4>MongoDB / MySQL</h4>
+          <span>70%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="70"></div>
           </div>
         </div>
-        <div class="skill">Figma / Adobe Creative <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="90"></div>
+        <div class="skill-item">
+          <i class="bx bxl-figma"></i>
+          <h4>Figma / Adobe Creative</h4>
+          <span>90%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="90"></div>
           </div>
         </div>
-        <div class="skill">REST APIs / Firebase <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="85"></div>
+        <div class="skill-item">
+          <i class="bx bx-cloud"></i>
+          <h4>Cloud Deploy</h4>
+          <span>80%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="80"></div>
           </div>
         </div>
-        <div class="skill">Cloud Deploy (Digital Ocean, Cloudflare) <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="80"></div>
+        <div class="skill-item">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original-wordmark.svg"
+            alt="Next.js" style="width:36px; height:36px; filter:invert(1);" />
+          <h4>Next.js</h4>
+          <span>60%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="60"></div>
           </div>
         </div>
-        <div class="skill">Version Control (Git) <div class="skill-bar-bg">
-            <div class="skill-bar" data-skill="95"></div>
+        <div class="skill-item">
+          <i class="bx bxl-git"></i>
+          <h4>Version Control (Git)</h4>
+          <span>95%</span>
+          <div class="skill-progress">
+            <div class="skill-progress-bar" data-skill="95"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+
 
   <!-- EXPERIENCE / RESUME -->
   <section id="resume" class="section">
@@ -893,10 +993,15 @@
     function typeRole() {
       let word = roles[t];
       effect.textContent = word.slice(0, ++r);
-      if (r === word.length) setTimeout(() => {
-        setTimeout(() => { r = 0; t = (t + 1) % roles.length; typeRole(); }, 1200);
-      }, 400);
-      else setTimeout(typeRole, 85);
+      if (r === word.length) {
+        setTimeout(() => {
+          r = 0;
+          t = (t + 1) % roles.length;
+          typeRole();
+        }, 1200);
+      } else {
+        setTimeout(typeRole, 85);
+      }
     }
     if (effect) typeRole();
 
@@ -911,7 +1016,7 @@
     window.addEventListener('scroll', showSectionsOnScroll);
     window.addEventListener('load', showSectionsOnScroll);
 
-    // Animated skill bars
+    // Animated skill bars (original style)
     function animateSkills() {
       document.querySelectorAll('.skill-bar').forEach(bar => {
         bar.style.width = bar.dataset.skill + '%';
@@ -920,13 +1025,25 @@
     window.addEventListener('scroll', animateSkills);
     window.addEventListener('load', animateSkills);
 
+    // Animated skill progress bars (new style)
+    function animateSkillProgress() {
+      document.querySelectorAll('.skill-progress-bar').forEach(bar => {
+        bar.style.width = bar.dataset.skill + '%';
+      });
+    }
+    window.addEventListener('scroll', animateSkillProgress);
+    window.addEventListener('load', animateSkillProgress);
+
     // Nav active link on scroll
     const navLinks = document.querySelectorAll('.nav-main nav a');
     function navActiveLink() {
       let index = 0, minDist = Infinity;
       sections.forEach((sec, i) => {
         const dist = Math.abs(sec.getBoundingClientRect().top - 70);
-        if (dist < minDist) { minDist = dist; index = i; }
+        if (dist < minDist) {
+          minDist = dist;
+          index = i;
+        }
       });
       navLinks.forEach((l, i) => l.classList.toggle('active', i === index));
     }
@@ -948,15 +1065,18 @@
         showToast("Oops! Something went wrong.", true);
       });
     });
+
     function showToast(msg, err) {
       const toast = document.getElementById('toast');
       toast.textContent = msg;
       toast.style.background = err
-        ? "linear-gradient(90deg, #d32f2f, #ef5350)" : "";
+        ? "linear-gradient(90deg, #d32f2f, #ef5350)"
+        : "";
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 3400);
     }
   </script>
+
 </body>
 
 </html>
